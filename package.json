@@ -1,0 +1,23 @@
+{
+  "name": "exerciciomodulo24",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/**/*.test.js",
+    "test:categories": "mocha ./test/categories/setup.js ./test/categories/**/*.test.js",
+    "test:products": "mocha ./test/products/**/*.test.js",
+    "test:contractCategories": "mocha ./test/contract/loginProvider.test.js",
+    "test:contractProducts": "mocha ./test/contract/loginConsumer.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4",
+    "pactum": "^3.8.0",
+    "pactum-matchers": "^1.1.7",
+    "prettier": "^3.7.4"
+  }
+}
