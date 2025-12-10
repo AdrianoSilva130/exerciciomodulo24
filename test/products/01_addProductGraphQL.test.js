@@ -35,20 +35,27 @@ it('Graphql - adicionar produto', async () => {
     name
     price
     quantity
+    visible
   }
 }
 `)
     .withGraphQLVariables({
       input: {
-        name: ('Produto Dinâmico ${Math.floor(Math.random() * 10000)}'),
+        name: ('Produto Dinâmico'),
         price: 99.99,
         quantity: 10,
+        visible: (true)
       }
     })
     .expectStatus(200)
-    .expectJsonTypes('data.addProduct', {
-  name: 'string',
-  price: 'number',
-  quantity: 'number',
+    .expectJsonMatch({
+  "data": {
+    "addProduct": {
+      "name": like("Sapato"),
+      "price": like(20),
+      "quantity": like(100),
+      "visible": true
+    }
+  }
     })
 })
