@@ -49,13 +49,13 @@ it('Graphql - adicionar produto', async () => {
     })
     .expectStatus(200)
     .expectJsonMatch({
-  "data": {
-    "addProduct": {
-      "name": like("Sapato"),
-      "price": like(20),
-      "quantity": like(100),
-      "visible": true
-    }
-  }
+  data: {
+    addProduct: eachLike({
+      name: like("Sapato"),
+      price: like(20),
+      quantity: like(100),
+      visible: true
+        })
+      }
     })
-})
+  })
