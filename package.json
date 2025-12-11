@@ -4,20 +4,32 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/**/*.test.js",
+    "report:merge": "mochawesome-merge ./mochawesome-report/*.json > mochawesome.json",
+    "report:html": "marge mochawesome.json --reportDir mochawesome-report --inline",
+    "report": "npm run report:merge && npm run report:html",
+    "test:contract": "mocha ./test/contract/**/*.test.js",
     "test:categories": "mocha ./test/categories/setup.js ./test/categories/**/*.test.js",
     "test:products": "mocha ./test/products/**/*.test.js",
-    "test:contractCategories": "mocha ./test/contract/loginProvider.test.js",
-    "test:contractProducts": "mocha ./test/contract/loginConsumer.test.js"
+    "test:contractProvider": "mocha ./test/contract/addCategoryProvider.test.js",
+    "test:contractConsumer": "mocha ./test/contract/addCategoryConsumer.test.js",
+    "test:addProductConsumer": "mocha ./test/contract/addProductConsumer.test.js",
+    "test:addProductProvider": "mocha ./test/contract/addProductProvider.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "chai": "^6.2.1",
+    "marge": "^1.0.1",
     "mocha": "^11.7.5",
     "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
     "pactum": "^3.8.0",
     "pactum-matchers": "^1.1.7",
     "prettier": "^3.7.4"
+  },
+  "dependencies": {
+    "pactum-flow-plugin": "^0.1.4"
   }
 }
