@@ -1,11 +1,19 @@
 🧪 Exercício Módulo 24 – Automação de Testes
+
 📌 Visão Geral
 
-Este repositório contém um projeto de automação de testes em JavaScript (Node.js), desenvolvido como parte do Módulo 24 do meu processo de aprendizado em Qualidade de Software e Testes Automatizados.
+Este repositório contém um projeto de automação de testes em JavaScript (Node.js), 
 
-O projeto tem como foco a automação de testes de API, incluindo testes REST e GraphQL, utilizando boas práticas de validação de contratos, organização de cenários e geração de relatórios profissionais.
+desenvolvido como parte do Módulo 24 do meu processo de aprendizado em Qualidade de Software e Testes Automatizados.
+
+O projeto tem como foco a automação de testes de API, incluindo testes REST e GraphQL, 
+
+utilizando boas práticas de validação de contratos, organização de cenários e geração de relatórios profissionais.
+
+Este repositório foi criado para demonstrar meu conhecimento técnico a recrutadores e times de QA.
 
 💡 Tecnologias e Ferramentas Utilizadas
+
 🧠 Linguagem e Plataforma
 
 JavaScript (Node.js)
@@ -47,6 +55,58 @@ Docker / Docker Compose – Ambiente isolado para execução dos testes
 .mocharc.json – Configuração do Mocha
 
 .gitignore – Boas práticas de versionamento
+
+🚀 Como Executar o Projeto
+🔹 Pré-Requisitos
+
+✔️ Node.js (v16 ou superior)
+✔️ npm
+✔️ Docker e Docker-Compose (opcional)
+
+🔹 Instalação
+git clone https://github.com/AdrianoSilva130/exerciciomodulo24.git
+cd exerciciomodulo24
+npm install
+
+🔹 Execução dos Testes
+
+✔️ Executar testes localmente
+
+npm test
+
+
+✔️ Executar via Docker
+
+docker-compose up --build
+
+📊 Relatórios de Testes
+
+Após a execução dos testes, é gerado automaticamente um relatório utilizando Mochawesome, disponível na pasta:
+
+/mochawesome-report/
+
+
+O relatório permite:
+
+Visualizar testes aprovados e reprovados
+
+Analisar erros e falhas
+
+Compartilhar evidências de execução
+
+Demonstrar maturidade em processos de QA
+
+📁 Estrutura do Projeto
+├── test/
+│   ├── api/
+│   │   ├── rest/              # Testes de API REST
+│   │   └── graphql/           # Testes de API GraphQL
+│   └── *.test.js              # Casos de teste automatizados
+├── mochawesome-report/        # Relatórios de testes
+├── .mocharc.json              # Configurações do Mocha
+├── docker-compose.yml         # Ambiente Docker
+├── package.json               # Dependências e scripts
+└── README.md                  # Documentação
 
 🧠 Competências Demonstradas
 
