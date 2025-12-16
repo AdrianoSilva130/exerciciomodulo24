@@ -29,3 +29,14 @@ it('API - Deve adicionar uma categoria com sucesso', async () => {
 
   console.log("ID criada:", categoryId);
 });
+
+it('API - Não deve adicionar categoria sem token de autorização', async () => {
+  await spec()
+    .post('/api/addCategory')
+    .withJson({
+      name: 'Categoria Automática',
+      description: 'Criada para o teste'
+    })
+    .expectStatus(403)
+    .expectJson('success', false);
+});

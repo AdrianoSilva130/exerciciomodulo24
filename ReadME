@@ -1,0 +1,72 @@
+🧪 Exercício Módulo 24 – Automação de Testes
+📌 Visão Geral
+
+Este repositório contém um projeto de automação de testes em JavaScript (Node.js), desenvolvido como parte do Módulo 24 do meu processo de aprendizado em Qualidade de Software e Testes Automatizados.
+
+O projeto tem como foco a automação de testes de API, incluindo testes REST e GraphQL, utilizando boas práticas de validação de contratos, organização de cenários e geração de relatórios profissionais.
+
+💡 Tecnologias e Ferramentas Utilizadas
+🧠 Linguagem e Plataforma
+
+JavaScript (Node.js)
+
+🧪 Testes Automatizados
+
+Mocha – Framework de testes
+
+PactumJS – Biblioteca para testes de API e contratos
+
+GraphQL – Testes de mutações e validações de respostas GraphQL
+
+📡 Testes de API
+
+Testes de API REST
+
+Testes de API GraphQL
+
+Validação de:
+
+Status Code
+
+Estrutura da resposta
+
+Tipos de dados
+
+Contratos de API
+
+📊 Relatórios
+
+Mochawesome – Geração de relatórios detalhados e visuais
+
+⚙️ Infraestrutura e Configuração
+
+npm – Gerenciamento de dependências
+
+Docker / Docker Compose – Ambiente isolado para execução dos testes
+
+.mocharc.json – Configuração do Mocha
+
+.gitignore – Boas práticas de versionamento
+
+🧠 Competências Demonstradas
+
+✔️ Automação de testes de API REST e GraphQL
+✔️ Uso do PactumJS para validações e contratos
+✔️ Testes automatizados com Mocha
+✔️ Validação de respostas GraphQL (queries e mutations)
+✔️ Geração de relatórios profissionais com Mochawesome
+✔️ Organização de projeto seguindo boas práticas
+✔️ Execução em ambiente Docker
+✔️ Versionamento com Git/GitHub
+
+🎯 Objetivo do Projeto
+
+Demonstrar, na prática, minha capacidade como QA / Analista de Testes, com foco em:
+
+Qualidade de Software
+
+Automação de Testes
+
+Testes de API
+
+Comunicação clara de resultados
