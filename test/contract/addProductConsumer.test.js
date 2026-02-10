@@ -3,7 +3,7 @@ const pf = require('pactum-flow-plugin');
 const { like } = require('pactum-matchers');
 
 function addFlowReporter() {
-  pf.config.url = 'http://localhost:8081';
+  pf.config.url = 'http://127.0.0.1:8081';
   pf.config.projectId = 'exercicio-front';
   pf.config.projectName = 'Exercicio Front';
   pf.config.version = Date.now().toString();
