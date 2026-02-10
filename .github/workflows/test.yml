@@ -21,7 +21,13 @@ jobs:
         run: npm ci
 
       - name: Start API
-        run: npm start &
+        run: npx serverest &
+
+      - name: Start Pactum Flow Server
+        run: npx pactum-flow-server &
+
+      - name: Wait for servers
+        run: sleep 5
 
       - name: Run tests
         run: npm test
