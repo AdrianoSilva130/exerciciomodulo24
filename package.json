@@ -15,6 +15,7 @@
     "test:contractConsumer": "mocha ./test/contract/addCategoryConsumer.test.js",
     "test:addProductConsumer": "mocha ./test/contract/addProductConsumer.test.js",
     "test:addProductProvider": "mocha ./test/contract/addProductProvider.test.js",
+    
     "start": "npx serverest",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/*.json > ./mochawesome-report/report.json && npx marge ./mochawesome-report/report.json -o ./mochawesome-report",
     "cy:run-ci": "start-server-and-test start http://localhost:3000/ test"
@@ -34,5 +35,8 @@
     "pactum-flow-plugin": "^0.1.4",
     "pactum-matchers": "^1.1.7",
     "prettier": "^3.7.4"
+  },
+  "dependencies": {
+    "start-server-and-test": "^2.1.3"
   }
 }
