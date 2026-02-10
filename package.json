@@ -13,7 +13,12 @@
     "test:contractProvider": "mocha ./test/contract/addCategoryProvider.test.js",
     "test:contractConsumer": "mocha ./test/contract/addCategoryConsumer.test.js",
     "test:addProductConsumer": "mocha ./test/contract/addProductConsumer.test.js",
-    "test:addProductProvider": "mocha ./test/contract/addProductProvider.test.js"
+    "test:addProductProvider": "mocha ./test/contract/addProductProvider.test.js",
+    "start": "npx serverest",
+    "cy:run": "npx cypress run",
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/*.json > ./mochawesome-report/report.json && npx marge ./mochawesome-report/report.json -o ./mochawesome-report",
+    "cy:run-ci": "start-server-and-test start http://localhost:3000/ test" 
+  
   },
   "keywords": [],
   "author": "",
