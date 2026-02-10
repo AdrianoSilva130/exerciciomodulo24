@@ -26,9 +26,6 @@ jobs:
       - name: Run tests
         run: npm test || true
 
-      - name: Generate report
-        run: npm run report
-
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
