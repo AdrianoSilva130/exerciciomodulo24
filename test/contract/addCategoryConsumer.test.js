@@ -2,8 +2,10 @@ const { reporter, flow, handler, mock } = require('pactum');
 const pf = require('pactum-flow-plugin');
 const { like } = require('pactum-matchers');
 
+const ENABLE_FLOW = process.env.ENABLE_FLOW === 'true';
+
 function addFlowReporter() {
-  pf.config.url = 'http://localhost:8081';
+  pf.config.url = 'http://127.0.0.1:8081';
   pf.config.projectId = 'exercicio-front';
   pf.config.projectName = 'Exercicio Front';
   pf.config.version = Date.now().toString();
@@ -14,13 +16,23 @@ function addFlowReporter() {
 }
 
 before(async () => {
-  addFlowReporter();
+  if (ENABLE_FLOW) {
+    addFlowReporter();
+  }
   await mock.start(4000);
 });
 
 after(async () => {
   await mock.stop();
-  await reporter.end();
+
+  // Só tenta finalizar o reporter se o Flow estiver ligado
+  if (ENABLE_FLOW) {
+    try {
+      await reporter.end();
+    } catch (err) {
+      console.warn('⚠️ Pactum Flow não disponível, ignorando finalização.');
+    }
+  }
 });
 
 handler.addInteractionHandler('Add Category Response', () => {
@@ -48,7 +60,6 @@ handler.addInteractionHandler('Add Category Response', () => {
     }
   };
 });
-
 
 it('CONTRATO - deve validar o contrato ao adicionar categoria', async () => {
   await flow('Add Category')

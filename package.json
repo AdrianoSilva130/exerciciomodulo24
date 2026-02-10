@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    
     "test": "mocha ./test/**/*.test.js",
     "report:merge": "mochawesome-merge ./mochawesome-report/*.json > mochawesome.json",
     "report:html": "marge mochawesome.json --reportDir mochawesome-report --inline",
@@ -16,8 +17,7 @@
     "test:addProductProvider": "mocha ./test/contract/addProductProvider.test.js",
     "start": "npx serverest",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/*.json > ./mochawesome-report/report.json && npx marge ./mochawesome-report/report.json -o ./mochawesome-report",
-    "cy:run-ci": "start-server-and-test start http://localhost:3000/ test" 
-  
+    "cy:run-ci": "start-server-and-test start http://localhost:3000/ test"
   },
   "keywords": [],
   "author": "",
@@ -25,15 +25,14 @@
   "description": "",
   "devDependencies": {
     "chai": "^6.2.1",
+    "express": "^5.2.1",
     "marge": "^1.0.1",
     "mocha": "^11.7.5",
     "mochawesome": "^7.1.4",
     "mochawesome-merge": "^5.1.0",
     "pactum": "^3.8.0",
+    "pactum-flow-plugin": "^0.1.4",
     "pactum-matchers": "^1.1.7",
     "prettier": "^3.7.4"
-  },
-  "dependencies": {
-    "pactum-flow-plugin": "^0.1.4"
   }
 }

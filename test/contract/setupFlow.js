@@ -1,9 +1,14 @@
-const { reporter } = require("pactum-flow-plugin");
+const { reporter } = require("pactum");
+const pf = require("pactum-flow-plugin");
 
-before(async () => {
-  await reporter.start();
-});
+if (process.env.ENABLE_FLOW === "true") {
+  pf.config.url = "http://127.0.0.1:8081";
+  pf.config.projectId = "exercicio-front";
+  pf.config.projectName = "Exercicio Front";
+  pf.config.version = Date.now().toString();
+  pf.config.username = "scanner";
+  pf.config.password = "scanner";
+  pf.config.auto = true;
 
-after(async () => {
-  await reporter.end();
-});
+  reporter.add(pf.reporter);
+}
