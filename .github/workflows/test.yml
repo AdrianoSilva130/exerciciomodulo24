@@ -31,3 +31,12 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Gerar relatório HTML (Mochawesome)
+        run: npm run cy:report
+
+      - name: Publicar relatório no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mochawesome-report
