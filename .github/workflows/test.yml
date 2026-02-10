@@ -3,6 +3,9 @@ name: CI - API Tests
 on:
   push:
     branches: [ "ci" ]
+    
+permissions:
+  contents: write
 
 jobs:
   api-tests:
