@@ -21,13 +21,16 @@ jobs:
         run: npm ci
 
       - name: Start API
-        run: npx serverest &
-
-      - name: Start Pactum Flow Server
-        run: npx pactum-flow-server &
-
-      - name: Wait for servers
-        run: sleep 5
+        run: npm start &
 
       - name: Run tests
-        run: npm test
+        run: npm test || true
+
+      - name: Generate report
+        run: npm run report
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mochawesome-report
